@@ -39,9 +39,8 @@ public class SeatReservationApplication extends Application {
 
         // Create GridPane
         createGridPane(gridPane);
-        Button cancelBtn = new Button("Cancel");
-        Button saveBtn = new Button("Save");
-        HBox bottomButtons = new HBox(cancelBtn, saveBtn);
+
+        HBox bottomButtons = new HBox(cancelButton, saveButton);
         bottomButtons.setSpacing(10);
 
         // Use Lamba format to adjust numOfPassengers if flyingWithInfant
