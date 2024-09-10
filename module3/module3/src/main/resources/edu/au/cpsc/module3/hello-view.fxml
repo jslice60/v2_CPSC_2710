@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module3.HelloController">
+   <center>
+      <WebView fx:id="webView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <HBox prefHeight="141.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="ident" />
+                  <TextField fx:id="identTextField" promptText="Enter IDENT" />
+                  <Label fx:id="iataCodeLabel" text="iata code" />
+                  <TextField fx:id="iataCodeTextField" promptText="Enter IATA code" />
+                  <Label text="local code" />
+                  <TextField fx:id="localCodeTextField" minWidth="120.0" promptText="Enter LOCAL code" />
+               </children>
+               <HBox.margin>
+                  <Insets left="20.0" right="40.0" top="5.0" />
+               </HBox.margin>
+            </VBox>
+            <HBox prefHeight="141.0" prefWidth="383.0">
+               <opaqueInsets>
+                  <Insets right="10.0" top="10.0" />
+               </opaqueInsets>
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Type" />
+                        <TextField fx:id="typeTextField" editable="false" />
+                        <Label text="Name" />
+                        <TextField fx:id="nameTextField" editable="false" />
+                        <Label text="Elevation" />
+                        <TextField fx:id="elevationTextField" editable="false" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Country" />
+                        <TextField fx:id="countryTextField" editable="false" />
+                        <Label text="Region" />
+                        <TextField fx:id="regionTextField" editable="false" />
+                        <Label text="Municipality" />
+                        <TextField fx:id="municipalityTextField" editable="false" />
+                     </children>
+                  </VBox>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" right="10.0" top="5.0" />
+               </HBox.margin>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
