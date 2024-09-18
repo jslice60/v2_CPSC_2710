@@ -10,7 +10,7 @@ import java.io.IOException;
 public class FlightSummaryApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(FlightSummaryApplication.class.getResource("flight-detail-view.fxml")); //JIMMY fix this!!
+        FXMLLoader fxmlLoader = new FXMLLoader(FlightSummaryApplication.class.getResource("flight-summary-app.fxml")); //JIMMY fix this!!
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Flight Schedule App!");
         stage.setScene(scene);

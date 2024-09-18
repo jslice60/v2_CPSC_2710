@@ -44,7 +44,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                     <items>
-                        <MenuItem fx:id="updateMenuItem" mnemonicParsing="false" onAction="#updateMenuAction" text="Update">
+                        <MenuItem fx:id="updateMenuItem" mnemonicParsing="false" onAction="#updateButtonAction" text="Update">
                             <accelerator>
                                 <KeyCodeCombination alt="UP" code="U" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
                             </accelerator>
