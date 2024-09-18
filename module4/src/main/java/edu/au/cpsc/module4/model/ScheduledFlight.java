@@ -14,7 +14,7 @@ public class ScheduledFlight implements Serializable {
     private LocalTime departureTime;
     private String arrivalAirportIdent;
     private LocalTime arrivalTime;
-    private HashSet<String> daysOfWeek;  // Using a HashSet for the days of the week
+    private Set<DayOfWeek> daysOfWeek;  // Using a HashSet for the days of the week
 
     // Constructor
     public ScheduledFlight(String flightDesignator, String departureAirportIdent, LocalTime departureTime,
@@ -25,6 +25,7 @@ public class ScheduledFlight implements Serializable {
         this.arrivalAirportIdent = arrivalAirportIdent;
         this.arrivalTime = arrivalTime;
         this.daysOfWeek = daysOfWeek != null ? new HashSet<>(daysOfWeek) : new HashSet<>();
+
     }
 
     // Getters and Setters with validation
@@ -94,11 +95,11 @@ public class ScheduledFlight implements Serializable {
         daysOfWeek.add("U");
         */
 
-    public Set<String> getDaysOfWeek() {
+    public Set<DayOfWeek> getDaysOfWeek() {
         return new HashSet<>(daysOfWeek);
     }
 
-    public void setDaysOfWeek(Set<String> daysOfWeek) {
+    public void setDaysOfWeek(Set<DayOfWeek> daysOfWeek) {
         if (daysOfWeek == null) {
             throw new IllegalArgumentException("Days of the week cannot be null");
         }
