@@ -84,17 +84,6 @@ public class ScheduledFlight implements Serializable {
         this.arrivalTime = arrivalTime;
     }
 
-    /*
-    Set<String> daysOfWeek = new HashSet<>();
-        daysOfWeek.add("Monday");
-        daysOfWeek.add("Tuesday");
-        daysOfWeek.add("Wednesday");
-        daysOfWeek.add("R");
-        daysOfWeek.add("Friday");
-        daysOfWeek.add("Saturday");
-        daysOfWeek.add("U");
-        */
-
     public Set<DayOfWeek> getDaysOfWeek() {
         return new HashSet<>(daysOfWeek);
     }

@@ -1,7 +1,12 @@
 package edu.au.cpsc.module4.controller;
 
 import edu.au.cpsc.module4.model.ScheduledFlight;
+
+import java.time.DayOfWeek;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 import javafx.collections.FXCollections;
 import javafx.collections.transformation.SortedList;
 import javafx.event.Event;
@@ -18,12 +23,22 @@ public class FlightTableViewController {
     private TableView<ScheduledFlight> flightTableView;
 
     @FXML
-    private TableColumn<ScheduledFlight, String> flightDesignatorColumn, departureAirportIdentColumn, arrivalAirportIdentColumn; //TODO dayOfWeekColumn
+    private TableColumn<ScheduledFlight, String> flightDesignatorColumn, departureAirportIdentColumn,
+            arrivalAirportIdentColumn, dayOfWeekColumn; //TODO dayOfWeekColumn
 
     public void initialize() {
         flightDesignatorColumn.setCellValueFactory(new PropertyValueFactory<ScheduledFlight, String>("flightDesignator"));
         departureAirportIdentColumn.setCellValueFactory(new PropertyValueFactory<ScheduledFlight, String>("departureAirportIdent"));
         arrivalAirportIdentColumn.setCellValueFactory(new PropertyValueFactory<ScheduledFlight, String>("arrivalAirportIdent"));
+        //dayOfWeekColumn.setCellValueFactory(new PropertyValueFactory<ScheduledFlight, Set>("daysOfWeek"));
+        dayOfWeekColumn.setCellValueFactory(cellData -> {
+            Set<DayOfWeek> daysOfWeek = cellData.getValue().getDaysOfWeek();
+            String daysOfWeekString = daysOfWeek.stream()
+                    .map(DayOfWeek::toString)
+                    .reduce((day1, day2) -> day1 + ", " + day2)
+                    .orElse("");
+            return new javafx.beans.property.SimpleStringProperty(daysOfWeekString);
+        });
         //TODO dayofWeekColumn
         // Initialize Flight Table
         flightTableView.getSelectionModel().selectedItemProperty().addListener(c -> tableSelectionChanged());
