@@ -32,6 +32,29 @@ public class Part1Controller {
   private Label numberOfCharactersLabel, validityLabel;
 
   public void initialize() {
-    // your bindings go here
+    // Bind messageTextField's text to echoTextField
+    echoTextField.textProperty().bind(messageTextField.textProperty());
+
+    // Create a bi-directional binding between firstBidirectionalTextField and secondBidirectionalTextField
+    firstBidirectionalTextField.textProperty().bindBidirectional(secondBidirectionalTextField.textProperty());
+
+    // Bind the opacity of secretOverlayImageView to the value of the secretSlider
+    secretOverlayImageView.opacityProperty().bind(secretSlider.valueProperty().divide(1));
+
+    // Bind selectMeLabel to display the state of selectMeCheckBox as true/false
+    selectMeLabel.textProperty().bind(selectMeCheckBox.selectedProperty().asString());
+
+    // Bind numberOfCharactersLabel to display the number of characters in tweetTextField
+    numberOfCharactersLabel.textProperty().bind(tweetTextField.textProperty().length().asString());
+
+    // Bind validityLabel to display "Valid" if tweetTextField has 10 or fewer characters, "Invalid" otherwise
+    validityLabel.textProperty().bind(
+            Bindings.when(tweetTextField.textProperty().length().lessThanOrEqualTo(10))
+                    .then("Valid")
+                    .otherwise("Invalid")
+    );
   }
+
+
+
 }
