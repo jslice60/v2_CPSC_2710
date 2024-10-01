@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 
 <TableView fx:id="flightTableView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="482.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-           xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module4.controller.FlightTableViewController">
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module6.controller.FlightTableViewController">
   <columns>
     <TableColumn fx:id="flightDesignatorColumn" editable="false" prefWidth="115.0" text="Flight Designator" />
     <TableColumn fx:id="departureAirportIdentColumn" editable="false" prefWidth="152.0" text="Departure Airport Ident" />

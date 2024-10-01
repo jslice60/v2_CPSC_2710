@@ -1,4 +1,4 @@
-package edu.au.cpsc.module4.data;
+package edu.au.cpsc.module6.data;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -6,8 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 
 public class Db {
     public static final File DEFAULT_FILE = new File("flights.dat");

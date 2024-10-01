@@ -1,4 +1,4 @@
-package edu.au.cpsc.module4.model;
+package edu.au.cpsc.module6.model;
 
 import java.io.Serializable;
 import java.time.DayOfWeek;

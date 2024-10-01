@@ -1,7 +1,7 @@
-package edu.au.cpsc.module4.sampledata;
+package edu.au.cpsc.module6.sampledata;
 
-import edu.au.cpsc.module4.model.ScheduledFlight;
-import edu.au.cpsc.module4.data.Db;
+import edu.au.cpsc.module6.model.ScheduledFlight;
+import edu.au.cpsc.module6.data.Db;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;

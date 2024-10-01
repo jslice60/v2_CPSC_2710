@@ -1,9 +1,8 @@
-package edu.au.cpsc.module4.controller;
+package edu.au.cpsc.module6.controller;
 
-import edu.au.cpsc.module4.model.ScheduledFlight;
+import edu.au.cpsc.module6.model.ScheduledFlight;
 
 import java.time.DayOfWeek;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 

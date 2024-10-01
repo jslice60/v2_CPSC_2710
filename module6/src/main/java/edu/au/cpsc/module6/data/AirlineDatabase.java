@@ -1,6 +1,6 @@
-package edu.au.cpsc.module4.data;
+package edu.au.cpsc.module6.data;
 
-import edu.au.cpsc.module4.model.ScheduledFlight;
+import edu.au.cpsc.module6.model.ScheduledFlight;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

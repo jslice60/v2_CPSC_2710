@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>edu.au.cpsc</groupId>
-    <artifactId>module4</artifactId>
+    <artifactId>module6</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>module4</name>
 
@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>edu.au.cpsc.module4/edu.au.cpsc.module4.FlightSummaryApplication</mainClass>
+                            <mainClass>edu.au.cpsc.module4/edu.au.cpsc.module6.FlightSummaryApplication</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

@@ -1,4 +1,4 @@
-package edu.au.cpsc.module4;
+package edu.au.cpsc.module6;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

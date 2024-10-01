@@ -1,6 +1,6 @@
-package edu.au.cpsc.module4.controller;
+package edu.au.cpsc.module6.controller;
 
-import edu.au.cpsc.module4.model.ScheduledFlight;
+import edu.au.cpsc.module6.model.ScheduledFlight;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
