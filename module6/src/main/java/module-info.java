@@ -12,4 +12,5 @@ module edu.au.cpsc.module6 {
     exports edu.au.cpsc.module6.controller;
     exports  edu.au.cpsc.part1;
     opens edu.au.cpsc.module6.controller to javafx.fxml;
+
 }

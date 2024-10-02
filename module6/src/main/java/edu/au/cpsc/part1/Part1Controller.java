@@ -39,7 +39,7 @@ public class Part1Controller {
     firstBidirectionalTextField.textProperty().bindBidirectional(secondBidirectionalTextField.textProperty());
 
     // Bind the opacity of secretOverlayImageView to the value of the secretSlider
-    secretOverlayImageView.opacityProperty().bind(secretSlider.valueProperty().divide(1));
+    secretOverlayImageView.opacityProperty().bind(secretSlider.valueProperty());
 
     // Bind selectMeLabel to display the state of selectMeCheckBox as true/false
     selectMeLabel.textProperty().bind(selectMeCheckBox.selectedProperty().asString());

@@ -24,6 +24,9 @@ public class FlightSummaryApplicationController {
     private Button updateButton;
 
     @FXML
+    private Button newButton;
+
+    @FXML
     private MenuItem updateMenuItem;
 
     // Current flight being edited
@@ -32,10 +35,19 @@ public class FlightSummaryApplicationController {
     // Indicates whether the flight being edited is new or not
     private boolean flightBeingEditedIsNew;
 
+   /*
+    1. Enable/disable buttons based on state of the model object (new/modified).
+    2. Place validation logic in your UI model and use it to highlight invalid input values (one simple way to do this is to have a boolean property
+         for each input that indicates if the input is valid or not and use that property to change some visual feature of the UI). */
+
     public void initialize() {
         flightTableViewController.showFlights(Db.getDatabase().getScheduledFlights());
         flightTableViewController.onFlightSelectionChanged(
                 event -> showFlight(event.getSelectedFlight()));
+        // #1 -disable update button
+        updateButton.disableProperty().bind(flightDetailViewController.getModel().modifiedProperty().not());
+        // #2 -new update button
+        //newButton.disableProperty().bind(flightDetailViewController.getModel().modifiedProperty().or(flightDetailViewController.getModel().newProperty()));
         showFlight(null);
     }
 
