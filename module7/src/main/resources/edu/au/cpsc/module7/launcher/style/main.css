@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "Chakra Petch Regular";
+    src: url(../font/ChakraPetch-Regular.ttf);
+
+}
+
+.root {
+    -fx-font-family: "Chakra Petch Regular";
+    -fx-font-size: 24pt;
+}
+
+#airports-btn {
+    -fx-background-color: #2176FF;
+    -fx-graphic: url(../icons/airports.png);
+}
+
+#seat-reservation-btn {
+    -fx-background-color: #33A1FD;
+    -fx-graphic: url(../icons/seatReservation.png);
+}
+
+#flight-schedule-btn {
+    -fx-background-color: #FDCA40;
+    -fx-graphic: url(../icons/flightSchedule.png);
+}
+
+#aircraft-btn {
+    -fx-background-color: #F79824;
+    -fx-graphic: url(../icons/aircraft.png);
+}
+
+.button {
+    -fx-opacity: 0.8;
+}
+#gridLogo {
+    -fx-background-image: url(../icons/logo.png);
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-opacity: 0.8;
+
+}
