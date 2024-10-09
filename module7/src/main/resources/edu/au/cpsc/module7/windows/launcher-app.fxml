@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
 <GridPane id="gridLogo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="750.0"
-          stylesheets="@../launcher/style/main.css" xmlns="http://javafx.com/javafx/17.0.2-ea"
-          xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module7.controller.LauncherApplicationController">
+          stylesheets="@../launcher/style/main.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="edu.au.cpsc.module7.controller.LauncherApplicationController">
    <columnConstraints>
       <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
@@ -16,7 +18,7 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
    </rowConstraints>
    <children>
-      <Button id="airports-btn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Airports">
+      <Button id="airports-btn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAirportsClickButton" text="Airports">
          <GridPane.margin>
             <Insets bottom="2.0" left="4.0" right="2.0" top="4.0" />
          </GridPane.margin></Button>
