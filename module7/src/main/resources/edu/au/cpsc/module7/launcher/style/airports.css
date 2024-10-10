@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Chakra Petch Regular";
+    src: url(../font/ChakraPetch-Regular.ttf);
+
+}
+
+.root {
+    -fx-font-family: "Chakra Petch Regular";
+    -fx-font-size: 12pt;
+}
+
+#identTextField {
+    -fx-background-color: #33A1FD;
+    -fx-opacity: 0.8;
+}
+
+#iataCodeTextField {
+    -fx-background-color: #33A1FD;
+    -fx-opacity: 0.8;
+}
+
+#localCodeTextField {
+    -fx-background-color: #33A1FD;
+    -fx-opacity: 0.8;
+}
+
+.top-hbox {
+    -fx-background-color: #F79824; /* Set the background color to blue */
+}
+
+
+
+

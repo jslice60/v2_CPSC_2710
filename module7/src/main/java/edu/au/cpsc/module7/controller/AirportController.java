@@ -2,10 +2,12 @@ package edu.au.cpsc.module7.controller;
 
 import edu.au.cpsc.module7.model.Airport;
 import edu.au.cpsc.module7.model.AirportService;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.web.WebView;
 
@@ -23,19 +25,13 @@ public class AirportController implements Initializable {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(AirportController.class.getResource("/edu/au/cpsc/module7/windows/airport-app.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
         stage.setTitle("Airport Search Screen");
         stage.setScene(scene);
         stage.show();
     }
 
-    @FXML
-    private TextField urlTextField;
-    /*@FXML
-    protected void identSearchAction() {
-        String url = urlTextField.getText();
-        webView.getEngine().load(url);
-    }*/
+
     @FXML
     private WebView webView;
     private AirportService airportService;
@@ -57,6 +53,8 @@ public class AirportController implements Initializable {
     private TextField regionTextField;
     @FXML
     private TextField municipalityTextField;
+    @FXML
+    private Button searchButtonControl;
 
 
     @Override
@@ -75,6 +73,19 @@ public class AirportController implements Initializable {
         addEnterKeyListener(localCodeTextField, "localCode");
     }
 
+
+
+    private void clearFields() {
+        typeTextField.clear();
+        nameTextField.clear();
+        elevationTextField.clear();
+        countryTextField.clear();
+        regionTextField.clear();
+        municipalityTextField.clear();
+        iataCodeTextField.clear();
+        identTextField.clear();
+        localCodeTextField.clear();
+    }
     // Method to add an "Enter" key listener to the TextField
     private void addEnterKeyListener(TextField textField, String searchType) {
         textField.setOnKeyPressed(event -> {
@@ -108,7 +119,7 @@ public class AirportController implements Initializable {
                         // Call method to update the map with the airport's location
                         updateMap(airport.getLatitude(), airport.getLongitude());
                     } else {
-                        //clearFields();
+                        clearFields();
                     }
                 }
             }
@@ -127,7 +138,12 @@ public class AirportController implements Initializable {
                     regionTextField.setText(airport.getIsoRegion());
                     municipalityTextField.setText(airport.getMunicipality());
                 } else {
-                    typeTextField.setText("Not found");
+                    typeTextField.setText("Not Found");
+                    nameTextField.setText("Not Found");
+                    elevationTextField.setText("Not Found");
+                    countryTextField.setText("Not Found");
+                    regionTextField.setText("Not Found");
+                    municipalityTextField.setText("Not Found");
                 }
             } else {
                 typeTextField.clear();
@@ -147,9 +163,12 @@ public class AirportController implements Initializable {
                     municipalityTextField.setText(airport.getMunicipality());
                 } else {
                     typeTextField.setText("Not found");
+                    nameTextField.setText("Not Found");
+                    elevationTextField.setText("Not Found");
+                    countryTextField.setText("Not Found");
+                    regionTextField.setText("Not Found");
+                    municipalityTextField.setText("Not Found");
                 }
-            } else {
-                typeTextField.clear();
             }
         });
 
@@ -187,4 +206,41 @@ public class AirportController implements Initializable {
     }
 
 
+    @FXML
+    public void searchButtonAction(ActionEvent actionEvent) {
+        String iataCode = iataCodeTextField.getText();
+        String identCode = identTextField.getText();
+        String localCode = localCodeTextField.getText();
+
+        Airport airport = null;
+
+        // Perform search based on the first non-empty field (priority: IATA > IDENT > LOCAL)
+        if (!iataCode.isEmpty()) {
+            airport = airportService.findAirportByIataCode(iataCode);
+        } else if (!identCode.isEmpty()) {
+            airport = airportService.findAirportByIdent(identCode);
+        } else if (!localCode.isEmpty()) {
+            airport = airportService.findAirportByLocalCode(localCode);
+        }
+
+        if (airport != null) {
+            // Fill all fields with the airport data
+            typeTextField.setText(airport.getType());
+            nameTextField.setText(airport.getAirportName());
+            elevationTextField.setText(airport.getElevationFt() != null ? airport.getElevationFt().toString() : "");
+            countryTextField.setText(airport.getIsoCountry());
+            regionTextField.setText(airport.getIsoRegion());
+            municipalityTextField.setText(airport.getMunicipality());
+
+            // Update the map with the airport's location
+            updateMap(airport.getLatitude(), airport.getLongitude());
+        } else {
+            // If no airport is found, clear the fields or display a message
+            clearFields();
+        }
+    }
+
+    public void clearButtonAction(ActionEvent actionEvent) {
+        clearFields();
+    }
 }

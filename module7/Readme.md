@@ -16,7 +16,7 @@ The landing page is broken down into 4 parts for a user to research information 
 - Feature 4: Not Operational
 
 ## How to Run each Feature
-- Feature 1: Click on the text "Airports" to enter the airports research window. Select an airport by entering the correct code. Press enter to search. This will also return a map of local area. To enter another search, simply delete the text you enter and type another code. Press escape to return to the homepage.
+- Feature 1: Click on the text "Airports" to enter the airports research window. Select an airport by entering the correct code (ie KLAX). Press enter to search or click the search button. This will also return a map of local area. To enter another search, simply delete the text you enter and type another code. You can also use the clear button to clear all fields. Press escape to return to the homepage.
 - Feature 2: TBD
 - Feature 3: TBD
 - Feature 4: TBD
