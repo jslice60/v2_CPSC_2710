@@ -21,7 +21,7 @@
          <GridPane.margin>
             <Insets bottom="2.0" left="4.0" right="2.0" top="4.0" />
          </GridPane.margin></Button>
-      <Button id="seat-reservation-btn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Seat Reservations" GridPane.columnIndex="1">
+      <Button id="seat-reservation-btn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Lounges" GridPane.columnIndex="1">
          <GridPane.margin>
             <Insets bottom="2.0" left="2.0" right="4.0" top="4.0" />
          </GridPane.margin></Button>
